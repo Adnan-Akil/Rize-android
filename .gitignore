@@ -8,7 +8,6 @@ out/
 
 # Gradle
 .gradle/
-gradle/wrapper/gradle-wrapper.jar
 local.properties
 *.properties
 !gradle.properties
