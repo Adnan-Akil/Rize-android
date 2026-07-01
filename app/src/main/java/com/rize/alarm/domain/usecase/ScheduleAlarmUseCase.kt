@@ -40,27 +40,37 @@ class ScheduleAlarmUseCase @Inject constructor(
         }
 
         val triggerAt = nextTriggerMillis(alarm)
-        val pendingIntent = buildPendingIntent(alarm.id)
+        val pendingIntent = buildSchedulePendingIntent(alarm.id)
         val alarmClockInfo = AlarmManager.AlarmClockInfo(triggerAt, pendingIntent)
         alarmManager.setAlarmClock(alarmClockInfo, pendingIntent)
         return true
     }
 
     fun cancel(alarmId: Int) {
-        val pendingIntent = buildPendingIntent(alarmId, PendingIntent.FLAG_NO_CREATE)
+        val pendingIntent = buildCancelPendingIntent(alarmId)
         pendingIntent?.let { alarmManager.cancel(it) }
     }
 
-    private fun buildPendingIntent(
-        alarmId: Int,
-        extraFlags: Int = 0
-    ): PendingIntent? {
+    private fun buildSchedulePendingIntent(alarmId: Int): PendingIntent {
         val intent = Intent(context, AlarmReceiver::class.java).apply {
             putExtra(AlarmReceiver.EXTRA_ALARM_ID, alarmId)
         }
-        val flags = PendingIntent.FLAG_UPDATE_CURRENT or
-                PendingIntent.FLAG_IMMUTABLE or extraFlags
-        return PendingIntent.getBroadcast(context, alarmId, intent, flags)
+        return PendingIntent.getBroadcast(
+            context,
+            alarmId,
+            intent,
+            PendingIntent.FLAG_UPDATE_CURRENT or PendingIntent.FLAG_IMMUTABLE
+        )
+    }
+
+    private fun buildCancelPendingIntent(alarmId: Int): PendingIntent? {
+        val intent = Intent(context, AlarmReceiver::class.java)
+        return PendingIntent.getBroadcast(
+            context,
+            alarmId,
+            intent,
+            PendingIntent.FLAG_NO_CREATE or PendingIntent.FLAG_IMMUTABLE
+        )
     }
 
     /**

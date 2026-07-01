@@ -10,7 +10,7 @@ import com.rize.alarm.data.model.WeeklyBudget
 @Database(
     entities = [Alarm::class, NfcTag::class, WakeLog::class, WeeklyBudget::class],
     version = 1,
-    exportSchema = true   // generates schema JSON for migration auditing
+    exportSchema = false
 )
 abstract class AppDatabase : RoomDatabase() {
     abstract fun alarmDao(): AlarmDao
