@@ -16,8 +16,6 @@ local.properties
 # Android Studio / IntelliJ
 .idea/
 *.iml
-*.xml
-!app/src/main/res/xml/*.xml
 .DS_Store
 
 # Signing
