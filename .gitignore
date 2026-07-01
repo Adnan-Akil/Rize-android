@@ -1,0 +1,34 @@
+# Built outputs
+*.apk
+*.aab
+*.ap_
+*.dex
+build/
+out/
+
+# Gradle
+.gradle/
+gradle/wrapper/gradle-wrapper.jar
+local.properties
+*.properties
+!gradle.properties
+!gradle/wrapper/gradle-wrapper.properties
+
+# Android Studio / IntelliJ
+.idea/
+*.iml
+*.xml
+!app/src/main/res/xml/*.xml
+.DS_Store
+
+# Signing
+*.keystore
+*.jks
+
+# Project memory files — local only, never committed
+mistake.md
+progress.md
+
+# OS
+Thumbs.db
+desktop.ini
