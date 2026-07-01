@@ -53,10 +53,14 @@ class AlarmForegroundService : Service() {
     // ——— Audio ———
 
     private fun startAlarmAudio() {
+        val alarmUri = android.media.RingtoneManager.getDefaultUri(
+            android.media.RingtoneManager.TYPE_ALARM
+        ) ?: android.media.RingtoneManager.getDefaultUri(
+            android.media.RingtoneManager.TYPE_RINGTONE  // fallback if no alarm tone set
+        )
+
         mediaPlayer = MediaPlayer().apply {
-            val afd = resources.openRawResourceFd(R.raw.alarm_default)
-            setDataSource(afd.fileDescriptor, afd.startOffset, afd.length)
-            afd.close()
+            setDataSource(applicationContext, alarmUri)
             setAudioAttributes(
                 AudioAttributes.Builder()
                     .setUsage(AudioAttributes.USAGE_ALARM)
@@ -65,15 +69,11 @@ class AlarmForegroundService : Service() {
             )
             isLooping = true
             prepare()
-
-            // Start at 30% volume, ramp to 100% over 60 seconds
             setVolume(0.3f, 0.3f)
             start()
         }
 
-        serviceScope.launch {
-            escalateVolume()
-        }
+        serviceScope.launch { escalateVolume() }
     }
 
     private suspend fun escalateVolume() {
