@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><meta content="mobile_tab" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500;600&amp;family=Plus+Jakarta+Sans:wght@400;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{width:100vw;margin:0;padding:0;background-color:#111318;}body{overscroll-behavior:none;}.pb-safe{padding-bottom:env(safe-area-inset-bottom,0px);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "primary-fixed-dim": "#00dce6", "on-background": "#e2e2e8", "on-tertiary-fixed-variant": "#653e00", "surface-container-lowest": "#0c0e12", "tertiary-fixed-dim": "#ffb95f", "surface": "#111318", "on-primary-fixed": "#002022", "on-tertiary-fixed": "#2a1700", "primary-container": "#00f2fe", "on-primary": "#00373a", "on-secondary-fixed": "#002113", "on-secondary-container": "#00311f", "error": "#ffb4ab", "secondary-fixed-dim": "#4edea3", "secondary-container": "#00a572", "on-error": "#690005", "on-tertiary": "#472a00", "primary-fixed": "#6ff6ff", "on-primary-container": "#006a70", "tertiary-fixed": "#ffddb8", "surface-dim": "#111318", "surface-container": "#1e2024", "surface-container-highest": "#333539", "on-tertiary-container": "#875400", "inverse-primary": "#00696f", "outline": "#849495", "on-error-container": "#ffdad6", "on-surface": "#e2e2e8", "background": "#111318", "on-secondary": "#003824", "surface-bright": "#37393e", "on-primary-fixed-variant": "#004f53", "surface-container-high": "#282a2e", "secondary": "#4edea3", "on-surface-variant": "#b9cacb", "tertiary": "#fff5ee", "primary": "#e0fdff", "surface-tint": "#00dce6", "inverse-surface": "#e2e2e8", "outline-variant": "#3a494b", "surface-container-low": "#1a1c20", "tertiary-container": "#ffd3a1", "surface-variant": "#333539", "inverse-on-surface": "#2f3035", "error-container": "#93000a", "secondary-fixed": "#6ffbbe", "on-secondary-fixed-variant": "#005236" }, "borderRadius": { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, "spacing": { "space-lg": "1.5rem", "space-md": "1rem", "space-xs": "0.25rem", "margin-desktop": "3rem", "space-xl": "2.5rem", "space-sm": "0.5rem", "gutter-desktop": "1.5rem", "margin": "1.25rem", "gutter": "1rem" }, "fontFamily": { "label-caps": ["JetBrains Mono"], "telemetry-mono": ["JetBrains Mono"], "body-sm": ["Plus Jakarta Sans"], "headline-lg": ["Plus Jakarta Sans"], "body-md": ["Plus Jakarta Sans"], "display-time-mobile": ["Plus Jakarta Sans"], "body-lg": ["Plus Jakarta Sans"], "headline-sm": ["Plus Jakarta Sans"], "headline-md": ["Plus Jakarta Sans"], "display-time": ["Plus Jakarta Sans"] }, "fontSize": { "label-caps": ["11px", { "lineHeight": "14px", "letterSpacing": "0.08em", "fontWeight": "600" }], "telemetry-mono": ["13px", { "lineHeight": "18px", "letterSpacing": "0.02em", "fontWeight": "500" }], "body-sm": ["12px", { "lineHeight": "16px", "fontWeight": "400" }], "headline-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700" }], "body-md": ["14px", { "lineHeight": "20px", "fontWeight": "400" }], "display-time-mobile": ["56px", { "lineHeight": "60px", "letterSpacing": "-0.03em", "fontWeight": "800" }], "body-lg": ["16px", { "lineHeight": "24px", "fontWeight": "400" }], "headline-sm": ["20px", { "lineHeight": "28px", "fontWeight": "600" }], "headline-md": ["24px", { "lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "600" }], "display-time": ["80px", { "lineHeight": "84px", "letterSpacing": "-0.04em", "fontWeight": "800" }] } } } }</script><style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head><body class="bg-surface text-on-surface flex flex-col min-h-screen"><header class="fixed top-0 w-full z-50 pt-safe bg-surface/80 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="h-16 px-margin flex items-center justify-between"><div class="flex items-center gap-space-sm"><img alt="RIZE Brand Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1XF9NTLHkgWOeupaTOrzM_qLZJ4kIXjhAdoS3yWKCWpqQ9U7K0luuz1po8Z8XPUX_ybow1z9kW8jEroNdxVGtRXOCz2C3JWPM2Re-_Cf1k6TKdH2uFa2Sdu0jRGacNsp9X3kXgerD_A7UtH_UpEmfLvxJVbJ6tfDDVtKefOiHMVBFgqw_dlstmGdMIO4_pyCEZN6-DmXW8enK3W-TBoJdaXGRqsIcowBWnplBbWFKMsXB6Irh5TcgpkAPad"/><span class="font-headline-sm text-headline-sm text-on-surface font-semibold tracking-tight">RIZE</span></div><div class="flex items-center"><h1 class="sr-only">Nfc Tags</h1><img alt="Profile" class="w-8 h-8 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBqy9m7InS98jkLkaLfmVSnl8SQFscKEtSN723L6ly-SohFUC4i8ltoIkaHN9JKbcxRXh8mRpWCVZC2yXQnkqFXrN7-OSQ_7AKJLu1Zc9mMflKQKkC2pbmVaLXK7IhFX3kcIj5y0gwHWDCqT5qF-TY_bcCG8NfXEpXyrdgTZvCS62D14qaBvYCnxloV9MctkUxAqWTOWM1JYejEp5WY_S7HjQO4rQQZF_iZkyCGel5o48752yYXT0-FAw"/></div></div></header><main class="flex flex-col relative w-full pt-16 pb-28 px-margin bg-surface flex-1"><div class="flex flex-col w-full gap-space-md">
+<!-- Status & Primary Pair Action Header -->
+<div class="relative overflow-hidden rounded-xl bg-surface-container-low p-space-md flex flex-col gap-space-md shadow-md">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-sm">
+<div class="relative flex items-center justify-center w-8 h-8 rounded-full bg-secondary-container/20">
+<span class="w-2.5 h-2.5 rounded-full bg-secondary-fixed animate-ping absolute"></span>
+<span class="w-2 h-2 rounded-full bg-secondary-fixed relative z-10"></span>
+</div>
+<div>
+<span class="font-telemetry-mono text-telemetry-mono text-secondary-fixed block">CRYPTOGRAPHIC MESH READY</span>
+<span class="font-headline-sm text-headline-sm text-on-surface font-semibold tracking-tight">4 Paired NFC Tags</span>
+</div>
+</div>
+<span class="font-label-caps text-label-caps text-on-surface-variant bg-surface-container px-2 py-1 rounded">V2.4 NFC-A</span>
+</div>
+<!-- Pair Tag Tactile Button -->
+<button class="group relative w-full h-14 rounded-full bg-primary-container text-on-primary font-headline-sm text-body-lg font-bold flex items-center justify-center gap-space-sm shadow-lg shadow-primary-container/10 active:scale-[0.98] transition-all overflow-hidden" id="pair-btn">
+<div class="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000 ease-in-out"></div>
+<span class="material-symbols-outlined text-2xl group-hover:animate-pulse">cell_tower</span>
+<span>PAIR NEW TAG</span>
+<span class="material-symbols-outlined text-base">sensors</span>
+</button>
+</div>
+<!-- Pairing Protocol Micro-Guide -->
+<div class="rounded-xl bg-surface-container-low p-space-md flex flex-col gap-space-xs shadow-sm">
+<div class="flex items-center justify-between text-on-surface-variant mb-1">
+<span class="font-label-caps text-label-caps uppercase flex items-center gap-1.5 text-primary-fixed-dim">
+<span class="material-symbols-outlined text-sm">info</span>
+        Pairing Protocol Guide
+      </span>
+<span class="font-telemetry-mono text-label-caps text-outline">13.56 MHZ</span>
+</div>
+<div class="grid grid-cols-3 gap-2 pt-1">
+<div class="bg-surface-container rounded-lg p-2.5 flex flex-col gap-1">
+<span class="font-telemetry-mono text-label-caps text-primary-container">STEP 01</span>
+<span class="font-body-sm text-body-sm text-on-surface font-medium leading-tight">Tap Pair Button</span>
+</div>
+<div class="bg-surface-container rounded-lg p-2.5 flex flex-col gap-1">
+<span class="font-telemetry-mono text-label-caps text-primary-container">STEP 02</span>
+<span class="font-body-sm text-body-sm text-on-surface font-medium leading-tight">Hold Phone ≤2cm</span>
+</div>
+<div class="bg-surface-container rounded-lg p-2.5 flex flex-col gap-1">
+<span class="font-telemetry-mono text-label-caps text-primary-container">STEP 03</span>
+<span class="font-body-sm text-body-sm text-on-surface font-medium leading-tight">Assign Location</span>
+</div>
+</div>
+</div>
+<!-- NFC Tags Registry Header -->
+<div class="flex items-center justify-between px-1 pt-1">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary-container text-lg">grid_view</span>
+<span class="font-label-caps text-label-caps text-on-surface uppercase tracking-wider">Registered Verification Nodes</span>
+</div>
+<span class="font-telemetry-mono text-label-caps text-outline">ACTIVE MESH</span>
+</div>
+<!-- Tag Cards List -->
+<div class="flex flex-col gap-space-sm" id="tags-container">
+<!-- Tag 1: Bathroom Mirror #01 -->
+<div class="rounded-xl bg-surface-container-low p-space-md flex flex-col gap-space-sm shadow-sm transition-all hover:bg-surface-container" id="tag-node-1">
+<div class="flex items-start justify-between">
+<div class="flex items-center gap-space-sm">
+<div class="w-10 h-10 rounded-lg bg-surface-container-high flex items-center justify-center text-primary-container shadow-inner">
+<span class="material-symbols-outlined text-2xl">crop_portrait</span>
+</div>
+<div>
+<div class="flex items-center gap-2">
+<h2 class="font-headline-sm text-headline-sm font-semibold text-on-surface leading-snug">Bathroom Mirror #01</h2>
+</div>
+<span class="font-telemetry-mono text-telemetry-mono text-on-surface-variant flex items-center gap-1.5 mt-0.5">
+<span class="material-symbols-outlined text-xs text-outline">fingerprint</span>
+              UID: 04:A1:8B:2F
+            </span>
+</div>
+</div>
+<div class="flex flex-col items-end gap-1">
+<span class="font-label-caps text-label-caps px-2 py-0.5 rounded-full bg-secondary-container/20 text-secondary-fixed flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary-fixed"></span>
+            STRONG
+          </span>
+<span class="font-telemetry-mono text-label-caps text-outline">-48 dBm</span>
+</div>
+</div>
+<!-- Alarm Binding Pill -->
+<div class="flex items-center justify-between bg-surface-container rounded-lg px-3 py-2 text-on-surface">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary-container text-base">alarm</span>
+<span class="font-body-md text-body-md font-medium">Morning Deep Focus</span>
+</div>
+<span class="font-telemetry-mono text-telemetry-mono text-primary-fixed-dim font-bold">06:30 AM</span>
+</div>
+<!-- Action Row -->
+<div class="flex items-center justify-between pt-1">
+<div class="flex items-center gap-2">
+<button class="test-tap-btn px-3 py-1.5 rounded-full bg-surface-container-high hover:bg-primary-container hover:text-on-primary text-on-surface font-label-caps text-label-caps uppercase flex items-center gap-1.5 transition-colors" data-tag-name="Bathroom Mirror #01">
+<span class="material-symbols-outlined text-base">nfc</span>
+            Test Tap
+          </button>
+<button class="px-3 py-1.5 rounded-full bg-surface-container-high hover:bg-surface-bright text-on-surface font-label-caps text-label-caps uppercase flex items-center gap-1.5 transition-colors">
+<span class="material-symbols-outlined text-base">sync_alt</span>
+            Reassign
+          </button>
+</div>
+<button class="delete-tag-btn w-8 h-8 rounded-full bg-error-container/20 hover:bg-error-container text-error flex items-center justify-center transition-colors" data-target="tag-node-1" title="Delete Tag">
+<span class="material-symbols-outlined text-lg">delete</span>
+</button>
+</div>
+</div>
+<!-- Tag 2: Espresso Machine #04 -->
+<div class="rounded-xl bg-surface-container-low p-space-md flex flex-col gap-space-sm shadow-sm transition-all hover:bg-surface-container" id="tag-node-2">
+<div class="flex items-start justify-between">
+<div class="flex items-center gap-space-sm">
+<div class="w-10 h-10 rounded-lg bg-surface-container-high flex items-center justify-center text-primary-container shadow-inner">
+<span class="material-symbols-outlined text-2xl">coffee_maker</span>
+</div>
+<div>
+<div class="flex items-center gap-2">
+<h2 class="font-headline-sm text-headline-sm font-semibold text-on-surface leading-snug">Espresso Machine #04</h2>
+</div>
+<span class="font-telemetry-mono text-telemetry-mono text-on-surface-variant flex items-center gap-1.5 mt-0.5">
+<span class="material-symbols-outlined text-xs text-outline">fingerprint</span>
+              UID: 04:E2:1C:99
+            </span>
+</div>
+</div>
+<div class="flex flex-col items-end gap-1">
+<span class="font-label-caps text-label-caps px-2 py-0.5 rounded-full bg-secondary-container/20 text-secondary-fixed flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary-fixed"></span>
+            STRONG
+          </span>
+<span class="font-telemetry-mono text-label-caps text-outline">-52 dBm</span>
+</div>
+</div>
+<!-- Alarm Binding Pill -->
+<div class="flex items-center justify-between bg-surface-container rounded-lg px-3 py-2 text-on-surface">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary-container text-base">alarm</span>
+<span class="font-body-md text-body-md font-medium">Gym &amp; Mobility</span>
+</div>
+<span class="font-telemetry-mono text-telemetry-mono text-primary-fixed-dim font-bold">07:15 AM</span>
+</div>
+<!-- Action Row -->
+<div class="flex items-center justify-between pt-1">
+<div class="flex items-center gap-2">
+<button class="test-tap-btn px-3 py-1.5 rounded-full bg-surface-container-high hover:bg-primary-container hover:text-on-primary text-on-surface font-label-caps text-label-caps uppercase flex items-center gap-1.5 transition-colors" data-tag-name="Espresso Machine #04">
+<span class="material-symbols-outlined text-base">nfc</span>
+            Test Tap
+          </button>
+<button class="px-3 py-1.5 rounded-full bg-surface-container-high hover:bg-surface-bright text-on-surface font-label-caps text-label-caps uppercase flex items-center gap-1.5 transition-colors">
+<span class="material-symbols-outlined text-base">sync_alt</span>
+            Reassign
+          </button>
+</div>
+<button class="delete-tag-btn w-8 h-8 rounded-full bg-error-container/20 hover:bg-error-container text-error flex items-center justify-center transition-colors" data-target="tag-node-2" title="Delete Tag">
+<span class="material-symbols-outlined text-lg">delete</span>
+</button>
+</div>
+</div>
+<!-- Tag 3: Office Desk #02 -->
+<div class="rounded-xl bg-surface-container-low p-space-md flex flex-col gap-space-sm shadow-sm transition-all hover:bg-surface-container" id="tag-node-3">
+<div class="flex items-start justify-between">
+<div class="flex items-center gap-space-sm">
+<div class="w-10 h-10 rounded-lg bg-surface-container-high flex items-center justify-center text-primary-container shadow-inner">
+<span class="material-symbols-outlined text-2xl">desk</span>
+</div>
+<div>
+<div class="flex items-center gap-2">
+<h2 class="font-headline-sm text-headline-sm font-semibold text-on-surface leading-snug">Office Desk #02</h2>
+</div>
+<span class="font-telemetry-mono text-telemetry-mono text-on-surface-variant flex items-center gap-1.5 mt-0.5">
+<span class="material-symbols-outlined text-xs text-outline">fingerprint</span>
+              UID: 04:9C:55:A1
+            </span>
+</div>
+</div>
+<div class="flex flex-col items-end gap-1">
+<span class="font-label-caps text-label-caps px-2 py-0.5 rounded-full bg-tertiary-container/20 text-tertiary-fixed-dim flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary-fixed-dim"></span>
+            GOOD
+          </span>
+<span class="font-telemetry-mono text-label-caps text-outline">-65 dBm</span>
+</div>
+</div>
+<!-- Alarm Binding Pill -->
+<div class="flex items-center justify-between bg-surface-container rounded-lg px-3 py-2 text-on-surface">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary-container text-base">alarm</span>
+<span class="font-body-md text-body-md font-medium">Standup Sync</span>
+</div>
+<span class="font-telemetry-mono text-telemetry-mono text-primary-fixed-dim font-bold">08:00 AM</span>
+</div>
+<!-- Action Row -->
+<div class="flex items-center justify-between pt-1">
+<div class="flex items-center gap-2">
+<button class="test-tap-btn px-3 py-1.5 rounded-full bg-surface-container-high hover:bg-primary-container hover:text-on-primary text-on-surface font-label-caps text-label-caps uppercase flex items-center gap-1.5 transition-colors" data-tag-name="Office Desk #02">
+<span class="material-symbols-outlined text-base">nfc</span>
+            Test Tap
+          </button>
+<button class="px-3 py-1.5 rounded-full bg-surface-container-high hover:bg-surface-bright text-on-surface font-label-caps text-label-caps uppercase flex items-center gap-1.5 transition-colors">
+<span class="material-symbols-outlined text-base">sync_alt</span>
+            Reassign
+          </button>
+</div>
+<button class="delete-tag-btn w-8 h-8 rounded-full bg-error-container/20 hover:bg-error-container text-error flex items-center justify-center transition-colors" data-target="tag-node-3" title="Delete Tag">
+<span class="material-symbols-outlined text-lg">delete</span>
+</button>
+</div>
+</div>
+<!-- Tag 4: Bedside Lamp #03 -->
+<div class="rounded-xl bg-surface-container-low p-space-md flex flex-col gap-space-sm shadow-sm transition-all hover:bg-surface-container" id="tag-node-4">
+<div class="flex items-start justify-between">
+<div class="flex items-center gap-space-sm">
+<div class="w-10 h-10 rounded-lg bg-surface-container-high flex items-center justify-center text-primary-container shadow-inner">
+<span class="material-symbols-outlined text-2xl">bed</span>
+</div>
+<div>
+<div class="flex items-center gap-2">
+<h2 class="font-headline-sm text-headline-sm font-semibold text-on-surface leading-snug">Bedside Lamp #03</h2>
+</div>
+<span class="font-telemetry-mono text-telemetry-mono text-on-surface-variant flex items-center gap-1.5 mt-0.5">
+<span class="material-symbols-outlined text-xs text-outline">fingerprint</span>
+              UID: 04:3D:7A:B4
+            </span>
+</div>
+</div>
+<div class="flex flex-col items-end gap-1">
+<span class="font-label-caps text-label-caps px-2 py-0.5 rounded-full bg-secondary-container/20 text-secondary-fixed flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary-fixed"></span>
+            EXCELLENT
+          </span>
+<span class="font-telemetry-mono text-label-caps text-outline">-38 dBm</span>
+</div>
+</div>
+<!-- Alarm Binding Pill -->
+<div class="flex items-center justify-between bg-surface-container rounded-lg px-3 py-2 text-on-surface">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary-container text-base">alarm</span>
+<span class="font-body-md text-body-md font-medium">Wind Down</span>
+</div>
+<span class="font-telemetry-mono text-telemetry-mono text-primary-fixed-dim font-bold">10:30 PM</span>
+</div>
+<!-- Action Row -->
+<div class="flex items-center justify-between pt-1">
+<div class="flex items-center gap-2">
+<button class="test-tap-btn px-3 py-1.5 rounded-full bg-surface-container-high hover:bg-primary-container hover:text-on-primary text-on-surface font-label-caps text-label-caps uppercase flex items-center gap-1.5 transition-colors" data-tag-name="Bedside Lamp #03">
+<span class="material-symbols-outlined text-base">nfc</span>
+            Test Tap
+          </button>
+<button class="px-3 py-1.5 rounded-full bg-surface-container-high hover:bg-surface-bright text-on-surface font-label-caps text-label-caps uppercase flex items-center gap-1.5 transition-colors">
+<span class="material-symbols-outlined text-base">sync_alt</span>
+            Reassign
+          </button>
+</div>
+<button class="delete-tag-btn w-8 h-8 rounded-full bg-error-container/20 hover:bg-error-container text-error flex items-center justify-center transition-colors" data-target="tag-node-4" title="Delete Tag">
+<span class="material-symbols-outlined text-lg">delete</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Strict Mode Enforcer Card -->
+<div class="rounded-xl bg-surface-container-low p-space-md flex flex-col gap-space-sm shadow-md mt-1">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-error-container/30 flex items-center justify-center text-error">
+<span class="material-symbols-outlined text-2xl">lock_clock</span>
+</div>
+<div>
+<div class="flex items-center gap-2">
+<h3 class="font-headline-sm text-headline-sm font-semibold text-on-surface">NFC Strict Mode</h3>
+<span class="font-label-caps text-label-caps bg-error-container/40 text-error px-1.5 py-0.5 rounded">UNCOMPROMISING</span>
+</div>
+<span class="font-telemetry-mono text-label-caps text-outline">HARDWARE ENFORCED</span>
+</div>
+</div>
+<!-- Tactile Toggle Switch -->
+<button aria-checked="true" class="w-[52px] h-[30px] rounded-full p-[3px] bg-primary-container flex items-center justify-end transition-colors cursor-pointer shadow-inner" id="strict-toggle" role="switch">
+<span class="w-[24px] h-[24px] rounded-full bg-surface flex items-center justify-center shadow-md transition-transform">
+<span class="w-1.5 h-1.5 rounded-full bg-primary-container"></span>
+</span>
+</button>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+      Require physical NFC scan to silence alarms. Snooze, volume rockers, and device power buttons are strictly overridden and disabled while ringing.
+    </p>
+</div>
+<!-- Interactive Test Scan Simulation Banner (Hidden by default, triggered on test tap) -->
+<div class="hidden fixed bottom-24 left-4 right-4 z-40 bg-surface-bright/95 backdrop-blur-md rounded-xl p-space-md shadow-2xl flex items-center justify-between" id="test-banner">
+<div class="flex items-center gap-3">
+<div class="w-9 h-9 rounded-full bg-secondary-container/30 text-secondary-fixed flex items-center justify-center">
+<span class="material-symbols-outlined text-xl animate-pulse">check_circle</span>
+</div>
+<div>
+<span class="font-headline-sm text-body-lg font-bold text-on-surface block" id="test-banner-title">Tag Verified</span>
+<span class="font-telemetry-mono text-label-caps text-secondary-fixed">CRYPTOGRAPHIC CHALLENGE MATCH: SUCCESS</span>
+</div>
+</div>
+<button class="text-on-surface-variant hover:text-on-surface p-1" id="test-banner-close">
+<span class="material-symbols-outlined text-lg">close</span>
+</button>
+</div>
+<!-- Pair Modal Overlay (Hidden) -->
+<div class="hidden fixed inset-0 z-50 bg-surface/90 backdrop-blur-xl flex flex-col items-center justify-center p-space-md" id="pair-modal">
+<div class="relative w-44 h-44 flex items-center justify-center mb-space-md">
+<div class="absolute inset-0 rounded-full border border-primary-container/20 animate-ping"></div>
+<div class="absolute inset-4 rounded-full border border-primary-container/40"></div>
+<div class="w-24 h-24 rounded-full bg-surface-container flex items-center justify-center text-primary-container shadow-2xl">
+<span class="material-symbols-outlined text-5xl animate-pulse">contactless</span>
+</div>
+</div>
+<h3 class="font-headline-md text-headline-md font-bold text-on-surface text-center mb-1">Scanning for NFC Tag...</h3>
+<p class="font-body-md text-body-md text-on-surface-variant text-center max-w-xs mb-space-lg">
+      Hold the top edge of your device flush against the NFC sticker.
+    </p>
+<button class="h-12 px-6 rounded-full bg-surface-container-high text-on-surface font-label-caps text-label-caps uppercase hover:bg-surface-bright transition-colors" id="cancel-pair-btn">
+      Cancel Scanning
+    </button>
+</div>
+</div>
+<script>
+  // Strict mode toggle interaction
+  const strictToggle = document.getElementById('strict-toggle');
+  let isStrict = true;
+  strictToggle.addEventListener('click', () => {
+    isStrict = !isStrict;
+    strictToggle.setAttribute('aria-checked', isStrict);
+    if (isStrict) {
+      strictToggle.className = 'w-[52px] h-[30px] rounded-full p-[3px] bg-primary-container flex items-center justify-end transition-colors cursor-pointer shadow-inner';
+    } else {
+      strictToggle.className = 'w-[52px] h-[30px] rounded-full p-[3px] bg-surface-container-highest flex items-center justify-start transition-colors cursor-pointer shadow-inner';
+    }
+  });
+
+  // Pairing Modal Simulation
+  const pairBtn = document.getElementById('pair-btn');
+  const pairModal = document.getElementById('pair-modal');
+  const cancelPairBtn = document.getElementById('cancel-pair-btn');
+
+  pairBtn.addEventListener('click', () => {
+    pairModal.classList.remove('hidden');
+  });
+
+  cancelPairBtn.addEventListener('click', () => {
+    pairModal.classList.add('hidden');
+  });
+
+  // Test Tap Notification Simulation
+  const testButtons = document.querySelectorAll('.test-tap-btn');
+  const testBanner = document.getElementById('test-banner');
+  const testBannerTitle = document.getElementById('test-banner-title');
+  const testBannerClose = document.getElementById('test-banner-close');
+  let testTimeout;
+
+  testButtons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const tagName = btn.getAttribute('data-tag-name');
+      testBannerTitle.textContent = `${tagName} Responded!`;
+      testBanner.classList.remove('hidden');
+      clearTimeout(testTimeout);
+      testTimeout = setTimeout(() => {
+        testBanner.classList.add('hidden');
+      }, 3500);
+    });
+  });
+
+  testBannerClose.addEventListener('click', () => {
+    testBanner.classList.add('hidden');
+    clearTimeout(testTimeout);
+  });
+
+  // Delete Node Simulation
+  const deleteButtons = document.querySelectorAll('.delete-tag-btn');
+  deleteButtons.forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      const targetId = btn.getAttribute('data-target');
+      const targetElement = document.getElementById(targetId);
+      if (targetElement) {
+        targetElement.style.opacity = '0';
+        targetElement.style.transform = 'scale(0.95)';
+        targetElement.style.transition = 'all 0.2s ease-out';
+        setTimeout(() => targetElement.remove(), 200);
+      }
+    });
+  });
+</script></main><nav class="fixed bottom-0 w-full z-50 pb-safe bg-surface/80 backdrop-blur-xl shadow-[0_-1px_12px_rgba(0,0,0,0.3)]" data-active-classes="text-primary-container [&amp;_span.indicator]:opacity-100"><div class="h-20 px-space-md flex items-center justify-around"><a class="flex flex-col items-center justify-center gap-space-xs w-16 h-12 text-on-surface-variant hover:text-on-surface transition-colors relative" data-path="alarms" href="#"><span class="material-symbols-outlined text-2xl">alarm</span><span class="font-label-caps text-label-caps tracking-wider uppercase">Alarms</span><span class="indicator absolute -bottom-1 w-1 h-1 rounded-full bg-primary-container opacity-0 transition-opacity"></span></a><a class="flex flex-col items-center justify-center gap-space-xs w-16 h-12 text-on-surface-variant hover:text-on-surface transition-colors relative" data-path="add" href="#"><span class="material-symbols-outlined text-2xl">add_circle</span><span class="font-label-caps text-label-caps tracking-wider uppercase">Add</span><span class="indicator absolute -bottom-1 w-1 h-1 rounded-full bg-primary-container opacity-0 transition-opacity"></span></a><a aria-current="page" class="flex flex-col items-center justify-center gap-space-xs w-16 h-12 transition-colors relative text-primary-container [&amp;_span.indicator]:opacity-100" data-path="nfc-tags" href="#"><span class="material-symbols-outlined text-2xl">nfc</span><span class="font-label-caps text-label-caps tracking-wider uppercase">NFC Tags</span><span class="indicator absolute -bottom-1 w-1 h-1 rounded-full bg-primary-container opacity-0 transition-opacity"></span></a><a class="flex flex-col items-center justify-center gap-space-xs w-16 h-12 text-on-surface-variant hover:text-on-surface transition-colors relative" data-path="settings" href="#"><span class="material-symbols-outlined text-2xl">tune</span><span class="font-label-caps text-label-caps tracking-wider uppercase">Settings</span><span class="indicator absolute -bottom-1 w-1 h-1 rounded-full bg-primary-container opacity-0 transition-opacity"></span></a></div></nav></body></html>
