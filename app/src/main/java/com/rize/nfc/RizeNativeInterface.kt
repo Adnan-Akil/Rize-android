@@ -61,6 +61,14 @@ class RizeNativeInterface(private val activity: MainActivity) {
                         vibrator?.vibrate(20)
                     }
                 }
+                "tick" -> {
+                    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
+                        vibrator?.vibrate(VibrationEffect.createPredefined(VibrationEffect.EFFECT_TICK))
+                    } else {
+                        @Suppress("DEPRECATION")
+                        vibrator?.vibrate(10)
+                    }
+                }
                 "heavy_click" -> {
                     if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
                         vibrator?.vibrate(VibrationEffect.createPredefined(VibrationEffect.EFFECT_HEAVY_CLICK))
@@ -149,5 +157,10 @@ class RizeNativeInterface(private val activity: MainActivity) {
         activity.runOnUiThread {
             activity.setKeepScreenOn(awake)
         }
+    }
+
+    @JavascriptInterface
+    fun setSystemBarTheme(isLight: Boolean, colorHex: String) {
+        activity.setSystemBarTheme(isLight, colorHex)
     }
 }

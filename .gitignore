@@ -12,3 +12,4 @@
 *.aab
 *.png
 node_modules/
+.kotlin/

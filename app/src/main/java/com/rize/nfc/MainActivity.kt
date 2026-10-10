@@ -15,6 +15,7 @@ import android.webkit.WebView
 import android.webkit.WebViewClient
 import androidx.activity.OnBackPressedCallback
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.view.WindowCompat
 
 class MainActivity : AppCompatActivity(), NfcAdapter.ReaderCallback {
 
@@ -25,9 +26,13 @@ class MainActivity : AppCompatActivity(), NfcAdapter.ReaderCallback {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        // Dark system navigation and status bars
-        window.statusBarColor = Color.parseColor("#111318")
-        window.navigationBarColor = Color.parseColor("#111318")
+        // Calming light system navigation and status bars with dark icons
+        val windowInsetsController = WindowCompat.getInsetsController(window, window.decorView)
+        windowInsetsController.isAppearanceLightStatusBars = true
+        windowInsetsController.isAppearanceLightNavigationBars = true
+
+        window.statusBarColor = Color.parseColor("#F8F9FA")
+        window.navigationBarColor = Color.parseColor("#F8F9FA")
 
         if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.O_MR1) {
             setShowWhenLocked(true)
@@ -55,7 +60,7 @@ class MainActivity : AppCompatActivity(), NfcAdapter.ReaderCallback {
         settings.mediaPlaybackRequiresUserGesture = false
         settings.cacheMode = WebSettings.LOAD_DEFAULT
 
-        webView.setBackgroundColor(Color.parseColor("#111318"))
+        webView.setBackgroundColor(Color.parseColor("#F8F9FA"))
         webView.isVerticalScrollBarEnabled = false
         webView.isHorizontalScrollBarEnabled = false
 
@@ -150,6 +155,21 @@ class MainActivity : AppCompatActivity(), NfcAdapter.ReaderCallback {
             window.addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON)
         } else {
             window.clearFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON)
+        }
+    }
+
+    fun setSystemBarTheme(isLight: Boolean, colorHex: String = if (isLight) "#F8F9FA" else "#1A1A1A") {
+        runOnUiThread {
+            try {
+                val controller = WindowCompat.getInsetsController(window, window.decorView)
+                controller.isAppearanceLightStatusBars = isLight
+                controller.isAppearanceLightNavigationBars = isLight
+                val parsedColor = Color.parseColor(colorHex)
+                window.statusBarColor = parsedColor
+                window.navigationBarColor = parsedColor
+            } catch (e: Exception) {
+                // Ignore parsing errors gracefully
+            }
         }
     }
 }
