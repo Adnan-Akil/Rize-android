@@ -1,6 +1,23 @@
 <resources>
-    <color name="black">#FF111318</color>
-    <color name="surface">#FF111318</color>
-    <color name="primary">#FF00F2FE</color>
+    <!-- Background & Canvas Surfaces (R1 Calming Light Theme) -->
+    <color name="canvas_bg">#FFF8F9FA</color>
+    <color name="surface">#FFFFFFFF</color>
+    <color name="surface_variant">#FFF1F5F9</color>
+    <color name="border_hairline">#FFE5E7EB</color>
+
+    <!-- Organic Sage / Pine Accents (R1) -->
+    <color name="primary">#FF3D7055</color>
+    <color name="primary_dark">#FF2D5A43</color>
+    <color name="primary_container">#FFE8F1EC</color>
+
+    <!-- Dawn Amber & Calm Slate Secondary (R1) -->
+    <color name="accent_amber">#FFD97706</color>
+    <color name="slate_secondary">#FF64748B</color>
+    <color name="slate_muted">#FF94A3B8</color>
+
+    <!-- Typography & High Contrast Elements -->
+    <color name="text_primary">#FF1E293B</color>
+    <color name="text_secondary">#FF64748B</color>
+    <color name="black">#FF0F172A</color>
     <color name="white">#FFFFFFFF</color>
 </resources>
