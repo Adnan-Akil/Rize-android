@@ -52,7 +52,7 @@ export default function RootLayout() {
 
   return (
     <>
-      <StatusBar style="light" backgroundColor={THEME.colors.canvas} />
+      <StatusBar style="light" />
       <Stack
         screenOptions={{
           headerShown: false,
