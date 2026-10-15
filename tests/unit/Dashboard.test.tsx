@@ -6,7 +6,7 @@ import { Alarm } from "../../src/db/schema";
 
 describe("Dashboard Components", () => {
   describe("DashboardHero", () => {
-    it("renders active alarm countdown and status badge", () => {
+    it("renders active alarm countdown and status badge", async () => {
       const activeAlarm: Alarm = {
         id: "alarm_1",
         time: "06:30",
@@ -19,7 +19,7 @@ describe("Dashboard Components", () => {
         createdAt: Date.now(),
       };
 
-      const { getByText } = render(
+      const { getByText } = await render(
         <DashboardHero
           nextAlarm={activeAlarm}
           countdownText="In 6h 45m"
@@ -32,8 +32,8 @@ describe("Dashboard Components", () => {
       expect(getByText(/Next: 06:30 AM/)).toBeTruthy();
     });
 
-    it("renders peaceful empty state when no alarms are enabled", () => {
-      const { getByText } = render(
+    it("renders peaceful empty state when no alarms are enabled", async () => {
+      const { getByText } = await render(
         <DashboardHero
           nextAlarm={null}
           countdownText="No active alarms"
@@ -47,11 +47,11 @@ describe("Dashboard Components", () => {
   });
 
   describe("BottomNavBar", () => {
-    it("renders navigation tabs and triggers onAddAlarm callback", () => {
+    it("renders navigation tabs and triggers onAddAlarm callback", async () => {
       const onAddMock = jest.fn();
       const onTabMock = jest.fn();
 
-      const { getByText, getByTestId } = render(
+      const { getByText, getByTestId } = await render(
         <BottomNavBar
           activeTab="alarms"
           onSelectTab={onTabMock}

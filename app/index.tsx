@@ -1,5 +1,6 @@
 import React, { useState, useCallback } from "react";
-import { View, StyleSheet, ScrollView, RefreshControl, SafeAreaView, TouchableOpacity } from "react-native";
+import { View, StyleSheet, ScrollView, RefreshControl, TouchableOpacity } from "react-native";
+import { SafeAreaView } from "react-native-safe-area-context";
 import { useRouter, useFocusEffect } from "expo-router";
 import * as Haptics from "expo-haptics";
 import { THEME } from "../src/styles/theme";
@@ -48,7 +49,7 @@ export default function DashboardScreen() {
   const nextAlarm = alarms.find((a) => a.isEnabled) || null;
   const countdown = useAlarmCountdown(nextAlarm);
 
-  const tagMap = new Map(tags.map((t) => [t.id, t.name]));
+  const tagMap = new Map<string, string>(tags.map((t: NfcTag) => [t.id, t.name]));
   const nextAlarmTagName = nextAlarm?.tagId ? tagMap.get(nextAlarm.tagId) : null;
 
   const handleToggle = async (id: string, isEnabled: boolean) => {

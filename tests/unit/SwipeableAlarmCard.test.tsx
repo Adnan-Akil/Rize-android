@@ -16,8 +16,8 @@ describe("SwipeableAlarmCard", () => {
     createdAt: Date.now(),
   };
 
-  it("renders formatted time and alarm label", () => {
-    const { getByText } = render(
+  it("renders formatted time and alarm label", async () => {
+    const { getByText } = await render(
       <SwipeableAlarmCard
         alarm={sampleAlarm}
         tagName="Bathroom Mirror"
@@ -33,9 +33,9 @@ describe("SwipeableAlarmCard", () => {
     expect(getByText("Bathroom Mirror")).toBeTruthy();
   });
 
-  it("triggers onToggle callback when switch is flipped", () => {
+  it("triggers onToggle callback when switch is flipped", async () => {
     const onToggleMock = jest.fn();
-    const { getByTestId } = render(
+    const { getByTestId } = await render(
       <SwipeableAlarmCard
         alarm={sampleAlarm}
         tagName="Bathroom Mirror"
