@@ -127,10 +127,15 @@ export class SQLiteDatabaseAdapter implements DatabaseAdapter {
 }
 
 let defaultAdapter: DatabaseAdapter | null = null;
+declare const process: any;
 
 export function getDatabaseAdapter(): DatabaseAdapter {
   if (!defaultAdapter) {
-    defaultAdapter = new SQLiteDatabaseAdapter();
+    if (typeof process !== "undefined" && process?.env?.NODE_ENV === "test") {
+      defaultAdapter = new InMemoryDatabaseAdapter();
+    } else {
+      defaultAdapter = new SQLiteDatabaseAdapter();
+    }
   }
   return defaultAdapter;
 }
