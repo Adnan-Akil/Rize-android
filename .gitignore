@@ -1,10 +1,12 @@
 *.iml
 .gradle
 /local.properties
+/legacy/local.properties
 /.idea
 .DS_Store
 /build
 /app/build
+/legacy/app/build
 /captures
 .externalNativeBuild
 .cxx
@@ -13,3 +15,7 @@
 *.png
 node_modules/
 .kotlin/
+.expo/
+dist/
+web-build/
+*.tsbuildinfo
