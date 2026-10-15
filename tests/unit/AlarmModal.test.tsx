@@ -17,9 +17,9 @@ describe("AddAlarmScreen Modal", () => {
   });
 
   it("renders time display, AM/PM toggle, and quick presets", async () => {
-    const { getByText, getByTestId, findByText } = render(<AddAlarmScreen />);
+    const { getByText, getByTestId } = await render(<AddAlarmScreen />);
 
-    expect(await findByText("Set Wake Routine")).toBeTruthy();
+    expect(getByText("Set Wake Routine")).toBeTruthy();
     expect(getByText("AM")).toBeTruthy();
     expect(getByText("PM")).toBeTruthy();
     expect(getByText("06:00")).toBeTruthy();
@@ -30,8 +30,7 @@ describe("AddAlarmScreen Modal", () => {
   });
 
   it("switches AM/PM when toggled", async () => {
-    const { getByText, findByText } = render(<AddAlarmScreen />);
-    await findByText("Set Wake Routine");
+    const { getByText } = await render(<AddAlarmScreen />);
     const pmPill = getByText("PM");
     fireEvent.press(pmPill);
     expect(pmPill).toBeTruthy();

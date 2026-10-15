@@ -17,16 +17,16 @@ describe("ActiveAlarmScreen (Dawn Waking Horizon)", () => {
     jest.clearAllMocks();
   });
 
-  it("renders waking instructions, snooze button, and test disarm action", () => {
-    const { getAllByText, getByTestId } = render(<ActiveAlarmScreen />);
+  it("renders waking instructions, snooze button, and test disarm action", async () => {
+    const { getAllByText, getByTestId } = await render(<ActiveAlarmScreen />);
 
     expect(getAllByText(/DISARM/i).length).toBeGreaterThan(0);
     expect(getByTestId("emergency-snooze-btn")).toBeTruthy();
     expect(getByTestId("simulate-disarm-btn")).toBeTruthy();
   });
 
-  it("triggers emergency snooze and navigates back", () => {
-    const { getByTestId } = render(<ActiveAlarmScreen />);
+  it("triggers emergency snooze and navigates back", async () => {
+    const { getByTestId } = await render(<ActiveAlarmScreen />);
     const snoozeBtn = getByTestId("emergency-snooze-btn");
     fireEvent.press(snoozeBtn);
     expect(mockBack).toHaveBeenCalled();

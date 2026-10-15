@@ -5,8 +5,8 @@ import {
   Modal,
   TextInput,
   TouchableOpacity,
-  SafeAreaView,
 } from "react-native";
+import { SafeAreaView } from "react-native-safe-area-context";
 import * as Haptics from "expo-haptics";
 import { THEME } from "../styles/theme";
 import { NfcTag } from "../db/schema";
